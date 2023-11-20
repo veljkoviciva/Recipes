@@ -22,7 +22,7 @@
         <h3>Ispis iz text input polja: {{ txt }}</h3> -->
 
         <fieldset style="background-color: gray; border: 3px solid orange;">
-            <form>
+            <form action="php/createRecipe.php" method="post">
                 <div class="row">
                     <div class="col-md-8">
                         <p style="background-color: orange; width: fit-content; margin: auto;
@@ -50,11 +50,29 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td>Tip(slatko/slano)</td>
+                                    <td><select ng-model="selectType" required>
+                                        <option value="a">Slatko(!dinamicki)</option>
+                                        <option value="b">Slano(!dinamicki)</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Podtip(domaća/svetska kuhinja)</td>
+                                    <td><select ng-model="selectSubtype" required>
+                                        <option value="a">Domaća kuhinja(!dinamicki)</option>
+                                        <option value="b">Svetska kuhinja(!dinamicki)</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td style="height: 5rem;">Broj osoba:</td>
                                     <td><input type="number" min="1" max="10" ng-model="numberPerson" required></td>
                                 </tr>
                                 </table>
+                                <br><p align="center"><input type="submit" value="Sačuvaj recept" class="btn btn-warning"></p>
                     </div>
+                    
             </form>
 
             <div class="col-md-4">
@@ -84,7 +102,7 @@
             </div>
     </div>
     <hr style="border: 5px solid limegreen;">
-    <p align="center"><input type="submit" value="Sačuvaj recept" class="btn btn-warning"></p>
+    <!-- <p align="center"><input type="submit" value="Sačuvaj recept" class="btn btn-warning"></p> -->
     </fieldset>
 
     </div>
